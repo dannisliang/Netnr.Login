@@ -9,31 +9,23 @@ namespace Netnr.Login
     /// </summary>
     public class QQ_AccessToken_RequestEntity
     {
-        public QQ_AccessToken_RequestEntity()
-        {
-            client_id = QQConfig.APPID;
-            client_secret = QQConfig.APPKey;
-            redirect_uri = QQConfig.Redirect_Uri;
-        }
-
-        private string _grant_type = "authorization_code";
         /// <summary>
         /// 授权类型，在本步骤中，此值为“authorization_code”。
         /// </summary>
         [Required]
-        public string grant_type { get => _grant_type; set => _grant_type = value; }
+        public string grant_type { get; set; } = "authorization_code";
 
         /// <summary>
         /// 申请QQ登录成功后，分配给网站的appid。
         /// </summary>
         [Required]
-        public string client_id { get; set; }
+        public string client_id { get; set; } = QQConfig.APPID;
 
         /// <summary>
         /// 申请QQ登录成功后，分配给网站的appkey。
         /// </summary>
         [Required]
-        public string client_secret { get; set; }
+        public string client_secret { get; set; } = QQConfig.APPKey;
 
         /// <summary>
         /// 上一步返回的authorization code。
@@ -48,7 +40,7 @@ namespace Netnr.Login
         /// 与上面一步中传入的redirect_uri保持一致。
         /// </summary>
         [Required]
-        public string redirect_uri { get; set; }
+        public string redirect_uri { get; set; } = QQConfig.Redirect_Uri;
 
     }
 }

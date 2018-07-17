@@ -24,11 +24,6 @@ namespace Netnr.Login
     /// </summary>
     public class QQ_OpenAPI_RequestEntity
     {
-        public QQ_OpenAPI_RequestEntity()
-        {
-            oauth_consumer_key = QQConfig.APPID;
-        }
-
         /// <summary>
         /// 可通过使用Authorization_Code获取Access_Token 或来获取。 
         /// access_token有3个月有效期。
@@ -40,7 +35,7 @@ namespace Netnr.Login
         /// 申请QQ登录成功后，分配给应用的appid
         /// </summary>
         [Required]
-        public string oauth_consumer_key { get; set; }
+        public string oauth_consumer_key { get; set; } = QQConfig.APPID;
 
         /// <summary>
         /// 用户的ID，与QQ号码一一对应。 

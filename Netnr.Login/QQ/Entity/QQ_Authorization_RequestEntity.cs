@@ -11,39 +11,30 @@ namespace Netnr.Login
     /// </summary>
     public class QQ_Authorization_RequestEntity
     {
-        public QQ_Authorization_RequestEntity()
-        {
-            client_id = QQConfig.APPID;
-            redirect_uri = QQConfig.Redirect_Uri;
-            state = Guid.NewGuid().ToString("N");
-            scope = "get_user_info";
-        }
-
-        private string _response_type = "code";
         /// <summary>
         /// 授权类型，此值固定为“code”。
         /// </summary>
         [Required]
-        public string response_type { get => _response_type; set => _response_type = value; }
+        public string response_type { get; set; } = "code";
 
         /// <summary>
         /// 申请QQ登录成功后，分配给应用的appid。
         /// </summary>
         [Required]
-        public string client_id { get; set; }
+        public string client_id { get; set; } = QQConfig.APPID;
         /// <summary>
         /// 成功授权后的回调地址，必须是注册appid时填写的主域名下的地址，
         /// 建议设置为网站首页或网站的用户中心。
         /// 注意需要将url进行URLEncode。
         /// </summary>
         [Required]
-        public string redirect_uri { get; set; }
+        public string redirect_uri { get; set; } = QQConfig.Redirect_Uri;
         /// <summary>
         /// client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。
         /// 请务必严格按照流程检查用户与state参数状态的绑定。
         /// </summary>
         [Required]
-        public string state { get; set; }
+        public string state { get; set; } = Guid.NewGuid().ToString("N");
 
         /// <summary>
         /// 请求用户授权时向用户显示的可进行授权的列表。
@@ -52,7 +43,7 @@ namespace Netnr.Login
         /// 不传则默认请求对接口get_user_info进行授权。
         /// 建议控制授权项的数量，只传入必要的接口名称，因为授权项越多，用户越可能拒绝进行任何授权。
         /// </summary>
-        public string scope { get; set; }
+        public string scope { get; set; } = "get_user_info";
 
         /// <summary>
         /// 仅PC网站接入时使用。

@@ -7,14 +7,12 @@ namespace Netnr.Login
     public class TaobaoConfig
     {
         /// <summary>
-        /// 请根据步骤操作：authorize => access_token => get_token_info => users/show
+        /// 请根据步骤操作：authorize => access_token
         /// </summary>
         public enum Step
         {
             Step1_Authorize,
-            Step2_AccessToken,
-            Step3_GetTokenInfo,
-            Step4_UserShow
+            Step2_AccessToken
         }
 
         #region API请求接口
@@ -28,17 +26,7 @@ namespace Netnr.Login
         /// POST
         /// </summary>
         public static string API_AccessToken = "https://oauth.taobao.com/token";
-
-        /// <summary>
-        /// POST
-        /// </summary>
-        public static string API_GetTokenInfo = "https://api.weibo.com/oauth2/get_token_info";
-
-        /// <summary>
-        /// GET
-        /// </summary>
-        public static string API_UserShow = "https://api.weibo.com/2/users/show.json";
-
+        
         #endregion
 
         /// <summary>

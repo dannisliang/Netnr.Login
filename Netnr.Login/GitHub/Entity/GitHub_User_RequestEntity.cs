@@ -7,11 +7,6 @@ namespace Netnr.Login
     /// </summary>
     public class GitHub_User_RequestEntity
     {
-        public GitHub_User_RequestEntity()
-        {
-            ApplicationName = GitHubConfig.ApplicationName;
-        }
-
         /// <summary>
         /// access_token
         /// </summary>
@@ -22,6 +17,6 @@ namespace Netnr.Login
         /// github 申请的应用名称
         /// </summary>
         [Required]
-        public string ApplicationName { get; set; }
+        public string ApplicationName { get; set; } = GitHubConfig.ApplicationName;
     }
 }

@@ -7,34 +7,23 @@ namespace Netnr.Login
     /// </summary>
     public class Taobao_AccessToken_RequestEntity
     {
-        public Taobao_AccessToken_RequestEntity()
-        {
-            client_id = TaobaoConfig.AppKey;
-            client_secret = TaobaoConfig.AppSecret;
-            redirect_uri = TaobaoConfig.Redirect_Uri;
-            state = System.Guid.NewGuid().ToString("N");
-            view = "web";
-        }
-
         /// <summary>
         /// 等同于AppKey，创建应用时获得。
         /// </summary>
         [Required]
-        public string client_id { get; set; }
+        public string client_id { get; set; } = TaobaoConfig.AppKey;
 
         /// <summary>
         /// 等同于AppSecret，创建应用时获得。
         /// </summary>
         [Required]
-        public string client_secret { get; set; }
+        public string client_secret { get; set; } = TaobaoConfig.AppSecret;
 
-
-        private string _grant_type = "authorization_code";
         /// <summary>
         /// authorization_code	授权类型 ，值为authorization_code
         /// </summary>
         [Required]
-        public string grant_type { get => _grant_type; set => _grant_type = value; }
+        public string grant_type { get; set; } = "authorization_code";
 
         /// <summary>
         /// 上一步获取code得到
@@ -48,12 +37,12 @@ namespace Netnr.Login
         /// 要求与应用注册时填写的回调地址域名一致或顶级域名一致 。
         /// </summary>
         [Required]
-        public string redirect_uri { get; set; }
+        public string redirect_uri { get; set; } = TaobaoConfig.Redirect_Uri;
 
         /// <summary>
         /// 可自定义，如1212等；维持应用的状态，传入值与返回值保持一致。
         /// </summary>
-        public string state { get; set; }
+        public string state { get; set; } = System.Guid.NewGuid().ToString("N");
 
         /// <summary>
         /// 可选web、tmall或wap其中一种，
@@ -61,7 +50,7 @@ namespace Netnr.Login
         /// Tmall对应天猫的浏览器页面样式；
         /// Wap对应无线端的浏览器页面样式。
         /// </summary>
-        public string view { get; set; }
+        public string view { get; set; } = "web";
 
     }
 }

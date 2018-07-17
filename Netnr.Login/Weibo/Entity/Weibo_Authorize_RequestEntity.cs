@@ -10,31 +10,23 @@ namespace Netnr.Login
     /// </summary>
     public class Weibo_Authorize_RequestEntity
     {
-        public Weibo_Authorize_RequestEntity()
-        {
-            client_id = WeiboConfig.AppKey;
-            redirect_uri = WeiboConfig.Redirect_Uri;
-            state = System.Guid.NewGuid().ToString("N");
-        }
-
-        private string _response_type = "code";
         /// <summary>
         /// 授权类型，此值固定为“code”。
         /// </summary>
         [Required]
-        public string response_type { get => _response_type; set => _response_type = value; }
+        public string response_type { get; set; } = "code";
 
         /// <summary>
         /// 申请应用时分配的AppKey。
         /// </summary>
         [Required]
-        public string client_id { get; set; }
+        public string client_id { get; set; } = WeiboConfig.AppKey;
 
         /// <summary>
         /// 授权回调地址，站外应用需与设置的回调地址一致，站内应用需填写canvas page的地址。
         /// </summary>
         [Required]
-        public string redirect_uri { get; set; }
+        public string redirect_uri { get; set; } = WeiboConfig.Redirect_Uri;
 
         /// <summary>
         /// 申请scope权限所需参数，可一次申请多个scope权限，用逗号分隔。http://open.weibo.com/wiki/Scope
@@ -46,7 +38,7 @@ namespace Netnr.Login
         /// 开发者可以用这个参数验证请求有效性，也可以记录用户请求授权页前的位置。
         /// 这个参数可用于防止跨站请求伪造（CSRF）攻击
         /// </summary>
-        public string state { get; set; }
+        public string state { get; set; } = System.Guid.NewGuid().ToString("N");
 
         /// <summary>
         /// 授权页面的终端类型

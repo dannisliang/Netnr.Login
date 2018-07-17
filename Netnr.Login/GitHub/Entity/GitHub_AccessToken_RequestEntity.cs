@@ -7,24 +7,17 @@ namespace Netnr.Login
     /// </summary>
     public class GitHub_AccessToken_RequestEntity
     {
-        public GitHub_AccessToken_RequestEntity()
-        {
-            client_id = GitHubConfig.ClientID;
-            client_secret = GitHubConfig.ClientSecret;
-            redirect_uri = GitHubConfig.Redirect_Uri;
-        }
-
         /// <summary>
         /// 注册应用时的获取的client_id
         /// </summary>
         [Required]
-        public string client_id { get; set; }
+        public string client_id { get; set; } = GitHubConfig.ClientID;
 
         /// <summary>
         /// 注册应用时的获取的client_secret。
         /// </summary>
         [Required]
-        public string client_secret { get; set; }
+        public string client_secret { get; set; } = GitHubConfig.ClientSecret;
 
         /// <summary>
         /// 调用authorize获得的code值。
@@ -35,7 +28,7 @@ namespace Netnr.Login
         /// 回调地址，需需与注册应用里的回调地址一致。
         /// </summary>
         [Required]
-        public string redirect_uri { get; set; }
+        public string redirect_uri { get; set; } = GitHubConfig.Redirect_Uri;
 
         /// <summary>
         /// Step1 回传的值
