@@ -10,14 +10,20 @@
 - Microsoft
 
 ----------
-## Use
-> 第一种方式：使用 NuGet 命令安装，或在 NuGet 搜索 Netnr.Login，（推荐这，方便升级）
-```
-Install-Package Netnr.Login -Version 1.0.0
-```
-> 第二种方式：直接添加项目
+> 如果该项目对你有帮助，请你为项目Star，谢谢，这是对我精神上的支持，也是能一直坚持下去的动力。
 
-> 两种方式都需要修改配置（密钥回调）
+----------
+## 安装 (NuGet)
+```
+Install-Package Netnr.Login
+```
+> 修改配置信息（密钥、回调等）
+
+----------
+## 框架
+`.NETStandard 2.0`
+
+`.NETFramework 4.0`
 
 ----------
 ## Code
@@ -164,6 +170,3 @@ public IActionResult AuthCallback(string code)
     return View();
 }
 ```
-
-## 帮助文档
-<https://www.netnr.com/home/type/oauth2.0>
