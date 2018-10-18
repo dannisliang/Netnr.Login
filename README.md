@@ -27,7 +27,7 @@ Install-Package Netnr.Login
 
 ----------
 ## Code
-```
+```csharp
 public IActionResult AuthCallback(string code)
 {
     //唯一标示
