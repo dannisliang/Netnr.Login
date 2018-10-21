@@ -2,8 +2,6 @@
 {
     /// <summary>
     /// Step2：通过Authorization Code获取Access Token
-    /// 
-    /// Url：http://wiki.connect.qq.com/%E4%BD%BF%E7%94%A8authorization_code%E8%8E%B7%E5%8F%96access_token
     /// </summary>
     public class QQ_AccessToken_RequestEntity
     {

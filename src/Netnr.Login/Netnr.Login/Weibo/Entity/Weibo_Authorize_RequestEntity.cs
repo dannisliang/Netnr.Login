@@ -2,9 +2,7 @@
 {
     /// <summary>
     /// Step1：Oauth2/authorize
-    /// 
     /// Url：http://open.weibo.com/wiki/Oauth2/authorize
-    /// 
     /// </summary>
     public class Weibo_Authorize_RequestEntity
     {

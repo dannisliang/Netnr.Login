@@ -1,9 +1,7 @@
 ﻿namespace Netnr.Login
 {
     /// <summary>
-    /// 
     /// 同意授权后会重定向
-    /// 
     /// </summary>
     public class Taobao_Authorize_ResultEntity
     {

@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Step2：Oauth2/access token
-    /// 
     /// Url：http://open.weibo.com/wiki/Oauth2/access_token
     /// </summary>
     public class Weibo_AccessToken_RequestEntity
@@ -28,6 +27,7 @@
         /// <summary>
         /// grant_type为authorization_code时
         /// 调用authorize获得的code值。
+        /// </summary>
         [Required]
         public string code { get; set; }
 

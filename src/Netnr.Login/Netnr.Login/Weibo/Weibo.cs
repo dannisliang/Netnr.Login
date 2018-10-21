@@ -5,11 +5,7 @@ namespace Netnr.Login
     public class Weibo
     {
         /// <summary>
-        /// 
         /// Step1：请求用户授权Token
-        /// 
-        /// A标签href="https://api.weibo.com/oauth2/authorize?client_id=APPKEY&redirect_uri=回调地址"
-        ///         
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -33,9 +29,7 @@ namespace Netnr.Login
         }
 
         /// <summary>
-        /// 
         /// Step2：获取授权过的Access Token
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -55,9 +49,7 @@ namespace Netnr.Login
         }
 
         /// <summary>
-        /// 
         /// Step3：查询用户access_token的授权相关信息，包括授权时间，过期时间和scope权限。
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -77,9 +69,7 @@ namespace Netnr.Login
         }
 
         /// <summary>
-        /// 
         /// Step4：根据用户ID获取用户信息
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>

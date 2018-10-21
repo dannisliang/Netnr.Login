@@ -1,13 +1,7 @@
 ﻿namespace Netnr.Login
 {
     /// <summary>
-    /// 
-    /// 请求 https://api.weibo.com/oauth2/authorize?client_id=123050457758183&redirect_uri=http://www.example.com/response&response_type=code
-    /// 
-    /// 同意授权后会重定向
-    /// 
-    /// http://www.example.com/response&code=CODE
-    /// 
+    /// 请求
     /// </summary>
     public class Weibo_Authorize_ResultEntity
     {

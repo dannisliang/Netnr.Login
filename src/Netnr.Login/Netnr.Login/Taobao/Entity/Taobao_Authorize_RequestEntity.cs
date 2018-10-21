@@ -2,9 +2,6 @@
 {
     /// <summary>
     /// Step1：Oauth2/authorize
-    /// 
-    /// Url：https://open.taobao.com/doc.htm?docId=102635&docType=1
-    /// 
     /// </summary>
     public class Taobao_Authorize_RequestEntity
     {

@@ -1,18 +1,15 @@
 ﻿namespace Netnr.Login
 {
     /// <summary>
-    /// 
     /// 根据用户ID获取用户信息
-    /// 
     /// Url：http://open.weibo.com/wiki/2/users/show
-    /// 
     /// </summary>
     public class Weibo_UserShow_ResultEntity
     {
         /// <summary>
         /// 用户UID
         /// </summary>
-        public System.Int64 id { get; set; }
+        public long id { get; set; }
         /// <summary>
         /// 字符串型的用户UID
         /// </summary>

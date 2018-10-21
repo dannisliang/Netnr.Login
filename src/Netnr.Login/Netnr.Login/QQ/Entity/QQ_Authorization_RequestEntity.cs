@@ -4,9 +4,7 @@ namespace Netnr.Login
 {
     /// <summary>
     /// Step1：获取Authorization Code
-    /// 
     /// Url：http://wiki.connect.qq.com/%E4%BD%BF%E7%94%A8authorization_code%E8%8E%B7%E5%8F%96access_token
-    /// 
     /// </summary>
     public class QQ_Authorization_RequestEntity
     {

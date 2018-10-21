@@ -3,9 +3,7 @@
 namespace Netnr.Login
 {
     /// <summary>
-    /// 
     /// Step1：获取authorize Code
-    /// 
     /// </summary>
     public class GitHub_Authorize_RequestEntity
     {

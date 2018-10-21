@@ -8,11 +8,7 @@ namespace Netnr.Login
     public class QQ
     {
         /// <summary>
-        /// 
         /// Step1：获取Authorization Code
-        /// 
-        /// A标签href="https://graph.qq.com/oauth2.0/authorize?client_id=APPID&response_type=code&state=xxxx&redirect_uri=回调地址"
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -36,9 +32,7 @@ namespace Netnr.Login
         }
 
         /// <summary>
-        /// 
         /// Step2：通过Authorization Code获取Access Token
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -67,9 +61,7 @@ namespace Netnr.Login
         }
 
         /// <summary>
-        /// 
         /// Step3：获取用户OpenId
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -94,9 +86,7 @@ namespace Netnr.Login
         }
 
         /// <summary>
-        /// 
         /// Step4：获取用户信息
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>

@@ -1,24 +1,20 @@
 ﻿namespace Netnr.Login
 {
     /// <summary>
-    /// 
     /// OpenAPI调用说明_OAuth2.0
-    /// 
-    /// Url：http://wiki.connect.qq.com/openapi%E8%B0%83%E7%94%A8%E8%AF%B4%E6%98%8E_oauth2-0
-    /// 
     /// 前提说明
     /// 1. 该appid已经开通了该OpenAPI的使用权限。
     ///    从API列表的接口列表中可以看到，有的接口是完全开放的，有的接口则需要提前提交申请，以获取访问权限。
     /// 2. 准备访问的资源是用户授权可访问的。
-    ///    网站调用该OpenAPI读写某个openid（用户）的信息时，必须是该用户已经对你的appid进行了该OpenAPI的授权（例如用户已经设置了相册不对外公开，
-    ///    则网站是无法读取照片信息的）。用户可以进入QQ空间->设置->授权管理进行访问权限的设置。
+    ///    网站调用该OpenAPI读写某个openid（用户）的信息时，必须是该用户已经对你的appid进行了该OpenAPI的授权
+    ///    （例如用户已经设置了相册不对外公开，则网站是无法读取照片信息的）。
+    ///    用户可以进入QQ空间->设置->授权管理进行访问权限的设置。
     /// 3. 已经成功获取到Access Token，并且Access Token在有效期内。
     /// 
     /// 调用OpenAPI接口
     /// 
     /// QQ登录提供了用户信息/动态同步/日志/相册/微博等OpenAPI（详见API列表），
     /// 网站需要将请求发送到某个具体的OpenAPI接口，以访问或修改用户数据。
-    /// 
     /// </summary>
     public class QQ_OpenAPI_RequestEntity
     {

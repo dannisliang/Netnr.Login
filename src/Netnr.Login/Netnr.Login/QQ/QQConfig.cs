@@ -4,7 +4,6 @@
     {
         /// <summary>
         /// 仅做说明用
-        /// 
         /// 请根据步骤操作：Authorization => AccessToken => OpenId => OpenAPI（get_user_info）
         /// </summary>
         public enum Step

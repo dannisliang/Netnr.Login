@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Step4：users/show
-    /// 
     /// Url：http://open.weibo.com/wiki/2/users/show
     /// </summary>
     public class Weibo_UserShow_RequestEntity
@@ -16,7 +15,7 @@
         /// <summary>
         /// 需要查询的用户ID。
         /// </summary>
-        public System.Int64 uid { get; set; }
+        public long uid { get; set; }
 
         /// <summary>
         /// 需要查询的用户昵称。

@@ -1,11 +1,8 @@
 ﻿namespace Netnr.Login
 {
     /// <summary>
-    /// 
     /// 获取登录用户的昵称、头像、性别
-    /// 
     /// Url：http://wiki.connect.qq.com/get_user_info
-    /// 
     /// </summary>
     public class QQ_OpenId_get_user_info_ResultEntity
     {
@@ -14,7 +11,7 @@
         /// </summary>
         public int ret { get; set; }
         /// <summary>
-        /// 如果ret < 0，会有相应的错误信息提示，返回数据全部用UTF-8编码。
+        /// 如果ret 小于 0，会有相应的错误信息提示，返回数据全部用UTF-8编码。
         /// </summary>
         public string msg { get; set; }
         /// <summary>

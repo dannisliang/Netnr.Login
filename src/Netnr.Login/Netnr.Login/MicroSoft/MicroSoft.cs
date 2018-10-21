@@ -6,7 +6,6 @@ namespace Netnr.Login
     {
         /// <summary>
         /// 请求授权地址
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>

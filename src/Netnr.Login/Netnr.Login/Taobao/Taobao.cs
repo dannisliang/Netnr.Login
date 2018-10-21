@@ -3,11 +3,7 @@
     public class Taobao
     {
         /// <summary>
-        /// 
         /// Step1：请求用户授权Token
-        /// 
-        /// A标签href="https://oauth.taobao.com/authorize?response_type=code&client_id=xxx&redirect_uri=回调地址&state=xxx&view=web"
-        ///    
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -33,9 +29,7 @@
         }
 
         /// <summary>
-        /// 
         /// Step2：获取授权过的Access Token
-        /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>

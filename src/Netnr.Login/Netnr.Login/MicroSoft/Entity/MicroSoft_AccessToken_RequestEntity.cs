@@ -22,6 +22,7 @@
 
         /// <summary>
         /// 调用authorize获得的code值。
+        /// </summary>
         [Required]
         public string code { get; set; }
 

@@ -3,7 +3,6 @@
     /// <summary>
     /// 返回说明：
     /// 如果成功返回，即可在返回包中获取到Access Token。 
-    /// 如：access_token=FE04************************CCE2&expires_in=7776000&refresh_token=88E4************************BE14
     /// </summary>
     public class QQ_AccessToken_ResultEntity
     {
