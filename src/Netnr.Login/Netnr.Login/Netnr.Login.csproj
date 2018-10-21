@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>netnr</Authors>
     <PackageProjectUrl>https://github.com/netnr/Netnr.Login</PackageProjectUrl>
-    <PackageIconUrl>https://www.netnr.com/favicon.svg</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/netnr/static/master/favicon.ico</PackageIconUrl>
     <Description>集成三方登录，QQ、微博、GitHub、淘宝（天猫）、Microsoft；
 使用文档看GitHub（Gitee）项目说明</Description>
     <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
