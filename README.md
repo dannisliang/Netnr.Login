@@ -28,34 +28,30 @@ Install-Package Netnr.Login
 ----------
 ## Code
 ```csharp
-/// <summary>
-/// 配置
-/// </summary>
-private void LoginConfig()
-{
-    QQConfig.APPID = "101511xxx";
-    QQConfig.APPKey = "f26b4af4a9d68bec2bbcbeee443fexxx";
-    //回调地址，与申请填写的地址保持一致
-    QQConfig.Redirect_Uri = "https://rf2.netnr.com/account/authcallback/qq";
+// 配置
 
-    WeiboConfig.AppKey = "";
-    WeiboConfig.AppSecret = "";
-    WeiboConfig.Redirect_Uri = "";
+QQConfig.APPID = "101511xxx";
+QQConfig.APPKey = "f26b4af4a9d68bec2bbcbeee443fexxx";
+//回调地址，与申请填写的地址保持一致
+QQConfig.Redirect_Uri = "https://rf2.netnr.com/account/authcallback/qq";
 
-    GitHubConfig.ClientID = "";
-    GitHubConfig.ClientSecret = "";
-    GitHubConfig.Redirect_Uri = "https://rf2.netnr.com/account/authcallback/github";
-    //申请的应用名称，非常重要
-    GitHubConfig.ApplicationName = "netnrf";
+WeiboConfig.AppKey = "";
+WeiboConfig.AppSecret = "";
+WeiboConfig.Redirect_Uri = "";
 
-    TaobaoConfig.AppKey = "";
-    TaobaoConfig.AppSecret = "";
-    TaobaoConfig.Redirect_Uri = "";
+GitHubConfig.ClientID = "";
+GitHubConfig.ClientSecret = "";
+GitHubConfig.Redirect_Uri = "https://rf2.netnr.com/account/authcallback/github";
+//申请的应用名称，非常重要
+GitHubConfig.ApplicationName = "netnrf";
 
-    MicroSoftConfig.ClientID = "";
-    MicroSoftConfig.ClientSecret = "";
-    MicroSoftConfig.Redirect_Uri = "";
-}
+TaobaoConfig.AppKey = "";
+TaobaoConfig.AppSecret = "";
+TaobaoConfig.Redirect_Uri = "";
+
+MicroSoftConfig.ClientID = "";
+MicroSoftConfig.ClientSecret = "";
+MicroSoftConfig.Redirect_Uri = "";
 
 /// <summary>
 /// 授权登录跳转
@@ -64,9 +60,6 @@ private void LoginConfig()
 /// <returns></returns>
 public IActionResult Auth()
 {
-    //调用配置
-    LoginConfig();
-
     string url = "/account/login";
     string vtype = RouteData.Values["id"]?.ToString().ToLower();
     switch (vtype)
@@ -98,9 +91,6 @@ public IActionResult Auth()
 /// <returns></returns>
 public IActionResult AuthCallback(string code)
 {
-    //调用配置
-    LoginConfig();
-
     //唯一标示
     string openId = string.Empty;
     //登录类型
