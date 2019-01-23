@@ -42,7 +42,7 @@ namespace Netnr.Login
 
             string pars = LoginBase.EntityToPars(entity);
 
-            string result = LoginBase.RequestTo.Url(MicroSoftConfig.API_AccessToken, pars);
+            string result = LoginBase.HttpTo.Url(MicroSoftConfig.API_AccessToken, pars);
 
             var outmo = LoginBase.ResultOutput<MicroSoft_AccessToken_ResultEntity>(result);
 
@@ -63,9 +63,9 @@ namespace Netnr.Login
 
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = LoginBase.RequestTo.HWRequest(MicroSoftConfig.API_User + "?" + pars);
+            var hwr = LoginBase.HttpTo.HWRequest(MicroSoftConfig.API_User + "?" + pars);
             hwr.ContentType = null;
-            string result = LoginBase.RequestTo.Url(hwr);
+            string result = LoginBase.HttpTo.Url(hwr);
             var outmo = LoginBase.ResultOutput<MicroSoft_User_ResultEntity>(result, new List<string> { "emails" });
 
             return outmo;

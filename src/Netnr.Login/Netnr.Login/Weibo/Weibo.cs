@@ -41,7 +41,7 @@ namespace Netnr.Login
             }
             
             string pars = LoginBase.EntityToPars(entity);
-            string result = LoginBase.RequestTo.Url(WeiboConfig.API_AccessToken, pars);
+            string result = LoginBase.HttpTo.Url(WeiboConfig.API_AccessToken, pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_AccessToken_ResultEntity>(result);
 
@@ -61,7 +61,7 @@ namespace Netnr.Login
             }
 
             string pars = LoginBase.EntityToPars(entity);
-            string result = LoginBase.RequestTo.Url(WeiboConfig.API_GetTokenInfo, pars);
+            string result = LoginBase.HttpTo.Url(WeiboConfig.API_GetTokenInfo, pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_GetTokenInfo_ResultEntity>(result);
 
@@ -82,7 +82,7 @@ namespace Netnr.Login
 
             string pars = LoginBase.EntityToPars(entity);
 
-            string result = LoginBase.RequestTo.Url(WeiboConfig.API_UserShow + "?" + pars);
+            string result = LoginBase.HttpTo.Url(WeiboConfig.API_UserShow + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_UserShow_ResultEntity>(result, new List<string> { "status" });
 

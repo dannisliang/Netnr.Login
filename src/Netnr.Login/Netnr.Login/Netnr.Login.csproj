@@ -6,10 +6,10 @@
     <Authors>netnr</Authors>
     <PackageProjectUrl>https://github.com/netnr/Netnr.Login</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/netnr/static/master/favicon.ico</PackageIconUrl>
-    <Description>集成三方登录，QQ、微博、GitHub、淘宝（天猫）、Microsoft；
+    <Description>集成三方登录，QQ、微信、微博、GitHub、淘宝（天猫）、Microsoft；
 使用文档看GitHub（Gitee）项目说明</Description>
     <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <PackageTags>netnr oauth2.0</PackageTags>
     <PackageLicenseUrl>https://raw.githubusercontent.com/netnr/Netnr.Login/master/LICENSE</PackageLicenseUrl>
@@ -17,11 +17,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
-    <DocumentationFile>D:\ROOM\Netnr.Login\src\Netnr.Login\Netnr.Login\Netnr.Login.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 
 </Project>

@@ -42,7 +42,7 @@
 
             string pars = LoginBase.EntityToPars(entity);
             
-            string result = LoginBase.RequestTo.Url(TaobaoConfig.API_AccessToken, pars);
+            string result = LoginBase.HttpTo.Url(TaobaoConfig.API_AccessToken, pars);
             
             var outmo = LoginBase.ResultOutput<Taobao_AccessToken_ResultEntity>(result);
 

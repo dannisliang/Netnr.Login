@@ -42,9 +42,9 @@ namespace Netnr.Login
 
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = LoginBase.RequestTo.HWRequest(GitHubConfig.API_AccessToken, "POST", pars);
+            var hwr = LoginBase.HttpTo.HWRequest(GitHubConfig.API_AccessToken, "POST", pars);
             hwr.Accept = "application/json";//application/xml
-            string result = LoginBase.RequestTo.Url(hwr);
+            string result = LoginBase.HttpTo.Url(hwr);
 
             var outmo = LoginBase.ResultOutput<GitHub_AccessToken_ResultEntity>(result);
 
@@ -65,9 +65,9 @@ namespace Netnr.Login
             
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = LoginBase.RequestTo.HWRequest(GitHubConfig.API_User + "?" + pars);
+            var hwr = LoginBase.HttpTo.HWRequest(GitHubConfig.API_User + "?" + pars);
             hwr.UserAgent = entity.ApplicationName;
-            string result = LoginBase.RequestTo.Url(hwr);
+            string result = LoginBase.HttpTo.Url(hwr);
 
             var outmo = LoginBase.ResultOutput<GitHub_User_ResultEntity>(result, new List<string> { "plan" });
 

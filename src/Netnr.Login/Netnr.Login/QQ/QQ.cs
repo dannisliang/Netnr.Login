@@ -45,7 +45,7 @@ namespace Netnr.Login
 
             string pars = LoginBase.EntityToPars(entity);
 
-            string result = LoginBase.RequestTo.Url(QQConfig.API_AccessToken_PC + "?" + pars);
+            string result = LoginBase.HttpTo.Url(QQConfig.API_AccessToken_PC + "?" + pars);
 
             List<string> listPars = result.Split('&').ToList();
             var jo = new JObject();
@@ -76,7 +76,7 @@ namespace Netnr.Login
             }
 
             string pars = LoginBase.EntityToPars(entity);
-            string result = LoginBase.RequestTo.Url(QQConfig.API_OpenID_PC + "?" + pars);
+            string result = LoginBase.HttpTo.Url(QQConfig.API_OpenID_PC + "?" + pars);
             //callback( {"client_id":"xx12196xx","openid":"09196B48CA96A8C8ED4FFxxCBxx59Dxx"} );
             result = result.Replace("callback( ", "").Replace(" );", "");
 
@@ -98,7 +98,7 @@ namespace Netnr.Login
             }
 
             string pars = LoginBase.EntityToPars(entity);
-            string result = LoginBase.RequestTo.Url(QQConfig.API_Get_User_Info + "?" + pars);
+            string result = LoginBase.HttpTo.Url(QQConfig.API_Get_User_Info + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<QQ_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
 
