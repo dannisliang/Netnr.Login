@@ -1,38 +1,4 @@
-# Netnr.Login
-
-----------
-## 集成三方登录
-
-- QQ
-- 微信
-- 微博
-- GitHub
-- 淘宝（天猫）
-- Microsoft
-
-----------
-> 如果该项目对你有帮助，请你为项目Star，谢谢，这是对我精神上的支持，也是能一直坚持下去的动力。
-
-----------
-## [更新日志](CHANGELOG.md)
-
-----------
-## 安装 (NuGet)
-```
-Install-Package Netnr.Login
-```
-> 修改配置信息（密钥、回调等）
-
-----------
-## 框架
-`.NETStandard 2.0`
-
-`.NETFramework 4.0`
-
-----------
-## Code
-```csharp
-using System;
+﻿using System;
 
 namespace Netnr.Login.Sample
 {
@@ -242,4 +208,3 @@ namespace Netnr.Login.Sample
         }
     }
 }
-```

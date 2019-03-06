@@ -9,7 +9,7 @@
     <Description>集成三方登录，QQ、微信、微博、GitHub、淘宝（天猫）、Microsoft；
 使用文档看GitHub（Gitee）项目说明</Description>
     <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <PackageTags>netnr oauth2.0</PackageTags>
     <PackageLicenseUrl>https://raw.githubusercontent.com/netnr/Netnr.Login/master/LICENSE</PackageLicenseUrl>

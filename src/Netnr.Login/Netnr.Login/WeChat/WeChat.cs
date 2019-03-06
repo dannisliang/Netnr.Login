@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Netnr.Login.WeChat
+﻿namespace Netnr.Login
 {
     public class WeChat
     {
@@ -50,15 +44,7 @@ namespace Netnr.Login.WeChat
 
             string result = LoginBase.HttpTo.Url(WeChatConfig.API_AccessToken + "?" + pars);
 
-            List<string> listPars = result.Split('&').ToList();
-            var jo = new JObject();
-            foreach (string item in listPars)
-            {
-                var items = item.Split('=').ToList();
-                jo[items.FirstOrDefault()] = items.LastOrDefault();
-            }
-
-            var outmo = LoginBase.ResultOutput<WeChat_AccessToken_ResultEntity>(Newtonsoft.Json.JsonConvert.SerializeObject(jo));
+            var outmo = LoginBase.ResultOutput<WeChat_AccessToken_ResultEntity>(result);
 
             return outmo;
         }
