@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Netnr.Login
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class QQ
     {
         /// <summary>
@@ -56,7 +59,7 @@ namespace Netnr.Login
 
             var outmo = LoginBase.ResultOutput<QQ_AccessToken_ResultEntity>(Newtonsoft.Json.JsonConvert.SerializeObject(jo));
 
-            return outmo;            
+            return outmo;
         }
 
         /// <summary>

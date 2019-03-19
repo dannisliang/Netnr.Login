@@ -77,134 +77,142 @@ namespace Netnr.Login.Sample
         /// <param name="loginType">登录类型</param>
         public void AuthCallback(string code, LoginBase.LoginType loginType)
         {
-            //唯一标示
-            string openId = string.Empty;
-
-            switch (loginType)
+            if (string.IsNullOrWhiteSpace(code))
             {
-                case LoginBase.LoginType.QQ:
-                    {
-                        //获取 access_token
-                        var tokenEntity = QQ.AccessToken(new QQ_AccessToken_RequestEntity()
+                //打开链接没登录授权
+            }
+            else
+            {
+                //唯一标示
+                string openId = string.Empty;
+
+                switch (loginType)
+                {
+                    case LoginBase.LoginType.QQ:
                         {
-                            code = code
-                        });
+                            //获取 access_token
+                            var tokenEntity = QQ.AccessToken(new QQ_AccessToken_RequestEntity()
+                            {
+                                code = code
+                            });
 
-                        //获取 OpendId
-                        var openidEntity = QQ.OpenId(new QQ_OpenId_RequestEntity()
+                            //获取 OpendId
+                            var openidEntity = QQ.OpenId(new QQ_OpenId_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token
+                            });
+
+                            //获取 UserInfo
+                            var userEntity = QQ.OpenId_Get_User_Info(new QQ_OpenAPI_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token,
+                                openid = openidEntity.openid
+                            });
+
+                            //身份唯一标识
+                            openId = openidEntity.openid;
+                        }
+                        break;
+                    case LoginBase.LoginType.WeiBo:
                         {
-                            access_token = tokenEntity.access_token
-                        });
+                            //获取 access_token
+                            var tokenEntity = Weibo.AccessToken(new Weibo_AccessToken_RequestEntity()
+                            {
+                                code = code
+                            });
 
-                        //获取 UserInfo
-                        var userEntity = QQ.OpenId_Get_User_Info(new QQ_OpenAPI_RequestEntity()
+                            //获取 access_token 的授权信息
+                            var tokenInfoEntity = Weibo.GetTokenInfo(new Weibo_GetTokenInfo_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token
+                            });
+
+                            //获取 users/show
+                            var userEntity = Weibo.UserShow(new Weibo_UserShow_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token,
+                                uid = Convert.ToInt64(tokenInfoEntity.uid)
+                            });
+
+                            openId = tokenEntity.access_token;
+                        }
+                        break;
+                    case LoginBase.LoginType.WeChat:
                         {
-                            access_token = tokenEntity.access_token,
-                            openid = openidEntity.openid
-                        });
+                            //获取 access_token
+                            var tokenEntity = WeChat.AccessToken(new WeChat_AccessToken_RequestEntity()
+                            {
+                                code = code
+                            });
 
-                        //身份唯一标识
-                        openId = openidEntity.openid;
-                    }
-                    break;
-                case LoginBase.LoginType.WeiBo:
-                    {
-                        //获取 access_token
-                        var tokenEntity = Weibo.AccessToken(new Weibo_AccessToken_RequestEntity()
+                            //获取 user
+                            var userEntity = WeChat.Get_User_Info(new WeChat_OpenAPI_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token,
+                                openid = tokenEntity.openid
+                            });
+
+                            //身份唯一标识
+                            openId = tokenEntity.openid;
+                        }
+                        break;
+                    case LoginBase.LoginType.GitHub:
                         {
-                            code = code
-                        });
+                            //申请的应用名称，非常重要
+                            GitHubConfig.ApplicationName = "netnrf";
 
-                        //获取 access_token 的授权信息
-                        var tokenInfoEntity = Weibo.GetTokenInfo(new Weibo_GetTokenInfo_RequestEntity()
+                            //获取 access_token
+                            var tokenEntity = GitHub.AccessToken(new GitHub_AccessToken_RequestEntity()
+                            {
+                                code = code
+                            });
+
+                            //获取 user
+                            var userEntity = GitHub.User(new GitHub_User_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token
+                            });
+
+                            openId = userEntity.id.ToString();
+                        }
+                        break;
+                    case LoginBase.LoginType.TaoBao:
                         {
-                            access_token = tokenEntity.access_token
-                        });
+                            //获取 access_token
+                            var tokenEntity = Taobao.AccessToken(new Taobao_AccessToken_RequestEntity()
+                            {
+                                code = code
+                            });
 
-                        //获取 users/show
-                        var userEntity = Weibo.UserShow(new Weibo_UserShow_RequestEntity()
+                            openId = tokenEntity.open_uid;
+                        }
+                        break;
+                    case LoginBase.LoginType.MicroSoft:
                         {
-                            access_token = tokenEntity.access_token,
-                            uid = Convert.ToInt64(tokenInfoEntity.uid)
-                        });
+                            //获取 access_token
+                            var tokenEntity = MicroSoft.AccessToken(new MicroSoft_AccessToken_RequestEntity()
+                            {
+                                code = code
+                            });
 
-                        openId = tokenEntity.access_token;
-                    }
-                    break;
-                case LoginBase.LoginType.WeChat:
-                    {
-                        //获取 access_token
-                        var tokenEntity = WeChat.AccessToken(new WeChat_AccessToken_RequestEntity()
-                        {
-                            code = code
-                        });
+                            //获取 user
+                            var userEntity = MicroSoft.User(new MicroSoft_User_RequestEntity()
+                            {
+                                access_token = tokenEntity.access_token
+                            });
 
-                        //获取 user
-                        var userEntity = WeChat.Get_User_Info(new WeChat_OpenAPI_RequestEntity()
-                        {
-                            access_token = tokenEntity.access_token,
-                            openid = tokenEntity.openid
-                        });
+                            openId = userEntity.id.ToString();
+                        }
+                        break;
+                }
 
-                        //身份唯一标识
-                        openId = tokenEntity.openid;
-                    }
-                    break;
-                case LoginBase.LoginType.GitHub:
-                    {
-                        //申请的应用名称，非常重要
-                        GitHubConfig.ApplicationName = "netnrf";
-
-                        //获取 access_token
-                        var tokenEntity = GitHub.AccessToken(new GitHub_AccessToken_RequestEntity()
-                        {
-                            code = code
-                        });
-
-                        //获取 user
-                        var userEntity = GitHub.User(new GitHub_User_RequestEntity()
-                        {
-                            access_token = tokenEntity.access_token
-                        });
-
-                        openId = userEntity.id.ToString();
-                    }
-                    break;
-                case LoginBase.LoginType.TaoBao:
-                    {
-                        //获取 access_token
-                        var tokenEntity = Taobao.AccessToken(new Taobao_AccessToken_RequestEntity()
-                        {
-                            code = code
-                        });
-
-                        openId = tokenEntity.open_uid;
-                    }
-                    break;
-                case LoginBase.LoginType.MicroSoft:
-                    {
-                        //获取 access_token
-                        var tokenEntity = MicroSoft.AccessToken(new MicroSoft_AccessToken_RequestEntity()
-                        {
-                            code = code
-                        });
-
-                        //获取 user
-                        var userEntity = MicroSoft.User(new MicroSoft_User_RequestEntity()
-                        {
-                            access_token = tokenEntity.access_token
-                        });
-
-                        openId = userEntity.id.ToString();
-                    }
-                    break;
+                //拿到登录标识
+                if (string.IsNullOrWhiteSpace(openId))
+                {
+                    //TO DO
+                }
             }
 
-            //拿到登录标识
-            if (string.IsNullOrWhiteSpace(openId))
-            {
-                //TO DO
-            }
         }
     }
 }

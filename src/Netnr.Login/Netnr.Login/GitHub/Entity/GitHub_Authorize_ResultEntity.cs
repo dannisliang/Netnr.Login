@@ -5,6 +5,9 @@
     /// </summary>
     public class GitHub_Authorize_ResultEntity
     {
+        /// <summary>
+        /// 授权码
+        /// </summary>
         public string code { get; set; }
 
         /// <summary>

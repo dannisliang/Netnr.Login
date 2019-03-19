@@ -1,12 +1,12 @@
 ﻿namespace Netnr.Login
 {
     /// <summary>
-    /// 请求
+    /// Authorize授权返回
     /// </summary>
-    public class Weibo_Authorize_ResultEntity
+    public class Gitee_Authorize_ResultEntity
     {
         /// <summary>
-        /// 用于第二步调用oauth2/access_token接口，获取授权后的access token。
+        /// 授权码
         /// </summary>
         public string code { get; set; }
 

@@ -3,24 +3,15 @@
     /// <summary>
     /// 配置
     /// </summary>
-    public class GitHubConfig
+    public class GiteeConfig
     {
         /// <summary>
         /// 请根据步骤操作：authorize => access_token => user
         /// </summary>
         public enum Step
         {
-            /// <summary>
-            /// 授权
-            /// </summary>
             Step1_Authorize,
-            /// <summary>
-            /// token
-            /// </summary>
             Step2_AccessToken,
-            /// <summary>
-            /// user
-            /// </summary>
             Step3_User
         }
 
@@ -29,17 +20,17 @@
         /// <summary>
         /// GET
         /// </summary>
-        public static string API_Authorize = "https://github.com/login/oauth/authorize";
+        public static string API_Authorize = "https://gitee.com/oauth/authorize";
 
         /// <summary>
         /// POST
         /// </summary>
-        public static string API_AccessToken = "https://github.com/login/oauth/access_token";
+        public static string API_AccessToken = "https://gitee.com/oauth/token";
 
         /// <summary>
         /// GET
         /// </summary>
-        public static string API_User = "https://api.github.com/user";
+        public static string API_User = "https://gitee.com/api/v5/user";
 
         #endregion
 
@@ -56,10 +47,10 @@
         /// <summary>
         /// 回调
         /// </summary>
-        public static string Redirect_Uri = "https://www.netnr.com/account/githublogin";
+        public static string Redirect_Uri = "https://www.netnr.com/account/giteelogin";
 
         /// <summary>
-        /// github 申请的应用名称
+        /// Gitee 申请的应用名称
         /// </summary>
         public static string ApplicationName = "";
     }

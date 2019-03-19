@@ -1,5 +1,8 @@
 ﻿namespace Netnr.Login
 {
+    /// <summary>
+    /// 配置
+    /// </summary>
     public class MicroSoftConfig
     {
         /// <summary>

@@ -6,8 +6,14 @@
     /// </summary>
     public class WeChat_Authorization_ResultEntity
     {
+        /// <summary>
+        /// 授权码
+        /// </summary>
         public string code { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string state { get; set; }
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// user
     /// </summary>
-    public class GitHub_User_RequestEntity
+    public class Gitee_User_RequestEntity
     {
         /// <summary>
         /// access_token
@@ -15,6 +15,6 @@
         /// github 申请的应用名称
         /// </summary>
         [Required]
-        public string ApplicationName { get; set; } = GitHubConfig.ApplicationName;
+        public string ApplicationName { get; set; } = GiteeConfig.ApplicationName;
     }
 }

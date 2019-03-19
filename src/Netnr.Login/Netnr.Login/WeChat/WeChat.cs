@@ -41,7 +41,6 @@
             }
 
             string pars = LoginBase.EntityToPars(entity);
-
             string result = LoginBase.HttpTo.Url(WeChatConfig.API_AccessToken + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<WeChat_AccessToken_ResultEntity>(result);

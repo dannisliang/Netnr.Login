@@ -40,10 +40,8 @@
                 return null;
             }
 
-            string pars = LoginBase.EntityToPars(entity);
-            
-            string result = LoginBase.HttpTo.Url(TaobaoConfig.API_AccessToken, pars);
-            
+            string pars = LoginBase.EntityToPars(entity);           
+            string result = LoginBase.HttpTo.Url(TaobaoConfig.API_AccessToken, pars);            
             var outmo = LoginBase.ResultOutput<Taobao_AccessToken_ResultEntity>(result);
 
             return outmo;

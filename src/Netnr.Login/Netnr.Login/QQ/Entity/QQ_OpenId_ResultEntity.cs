@@ -1,7 +1,13 @@
 ﻿namespace Netnr.Login
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class QQ_OpenId_ResultEntity
     {
+        /// <summary>
+        /// client id
+        /// </summary>
         public string client_id { get; set; }
 
         /// <summary>

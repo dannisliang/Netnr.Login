@@ -9,16 +9,23 @@
     <Description>集成三方登录，QQ、微信、微博、GitHub、淘宝（天猫）、Microsoft；
 使用文档看GitHub（Gitee）项目说明</Description>
     <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
-    <Version>3.0.1</Version>
+    <Version>3.0.2</Version>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <PackageTags>netnr oauth2.0</PackageTags>
     <PackageLicenseUrl>https://raw.githubusercontent.com/netnr/Netnr.Login/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  <DocumentationFile>H:\ROOM\Netnr.Login\src\Netnr.Login\Netnr.Login\Netnr.Login.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;net40</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Gitee\**" />
+    <EmbeddedResource Remove="Gitee\**" />
+    <None Remove="Gitee\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />

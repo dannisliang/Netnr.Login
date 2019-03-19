@@ -2,6 +2,9 @@
 
 namespace Netnr.Login
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MicroSoft
     {
         /// <summary>

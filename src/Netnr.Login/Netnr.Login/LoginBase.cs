@@ -8,8 +8,14 @@ using System.Text;
 
 namespace Netnr.Login
 {
+    /// <summary>
+    /// 辅助方法
+    /// </summary>
     public class LoginBase
     {
+        /// <summary>
+        /// 登录类型枚举
+        /// </summary>
         public enum LoginType
         {
             QQ,
@@ -20,6 +26,9 @@ namespace Netnr.Login
             MicroSoft
         }
 
+        /// <summary>
+        /// HTTP请求
+        /// </summary>
         public class HttpTo
         {
             #region 服务器 发送请求
@@ -136,10 +145,10 @@ namespace Netnr.Login
         /// <summary>
         /// 处理结果
         /// </summary>
-        /// <typeparam name="T">输出的实体</typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <param name="result">请求的结果</param>
-        /// <param name="rtype">处理的类型，默认JObject</param>
-        /// <param name="resultNeedJObject">子节点需要JObject转化</param>
+        /// <param name="resultNeedJObject">处理的类型，默认JObject</param>
+        /// <returns></returns>
         public static T ResultOutput<T>(string result, List<string> resultNeedJObject = null) where T : class, new()
         {
             var mo = new T();
@@ -189,7 +198,8 @@ namespace Netnr.Login
         /// <summary>
         /// 验证对象是否有效
         /// </summary>
-        /// <param name="obj">要验证的对象</param>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
         /// <returns></returns>
         public static bool IsValid<T>(T entity) where T : new()
         {

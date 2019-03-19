@@ -17,6 +17,9 @@
         [Required]
         public string client_secret { get; set; } = MicroSoftConfig.ClientSecret;
 
+        /// <summary>
+        /// 固定值
+        /// </summary>
         [Required]
         public string grant_type { get; set; } = "authorization_code";
 

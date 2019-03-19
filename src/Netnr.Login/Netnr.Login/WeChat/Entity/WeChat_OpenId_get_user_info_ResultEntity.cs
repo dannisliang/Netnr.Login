@@ -4,7 +4,6 @@ namespace Netnr.Login
 {
     /// <summary>
     /// 获取登录用户的昵称、头像、性别
-    /// Url：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
     /// </summary>
     public class WeChat_OpenId_get_user_info_ResultEntity
     {

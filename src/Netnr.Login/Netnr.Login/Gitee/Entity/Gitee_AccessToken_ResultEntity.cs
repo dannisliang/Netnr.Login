@@ -3,7 +3,7 @@
     /// <summary>
     /// access_token 信息
     /// </summary>
-    public class GitHub_AccessToken_ResultEntity
+    public class Gitee_AccessToken_ResultEntity
     {
         /// <summary>
         /// access_token

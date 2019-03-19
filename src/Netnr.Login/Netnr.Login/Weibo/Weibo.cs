@@ -2,6 +2,9 @@
 
 namespace Netnr.Login
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Weibo
     {
         /// <summary>
@@ -81,7 +84,6 @@ namespace Netnr.Login
             }
 
             string pars = LoginBase.EntityToPars(entity);
-
             string result = LoginBase.HttpTo.Url(WeiboConfig.API_UserShow + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_UserShow_ResultEntity>(result, new List<string> { "status" });

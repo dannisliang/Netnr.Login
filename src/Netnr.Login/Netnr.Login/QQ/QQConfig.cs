@@ -1,5 +1,8 @@
 ﻿namespace Netnr.Login
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class QQConfig
     {
         /// <summary>
@@ -46,7 +49,7 @@
         public static string API_Get_User_Info = "https://graph.qq.com/user/get_user_info";
 
         #endregion
-        
+
         /// <summary>
         /// APP ID
         /// </summary>

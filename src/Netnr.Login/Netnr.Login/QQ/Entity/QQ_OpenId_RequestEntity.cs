@@ -1,5 +1,8 @@
 ﻿namespace Netnr.Login
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class QQ_OpenId_RequestEntity
     {
         /// <summary>
