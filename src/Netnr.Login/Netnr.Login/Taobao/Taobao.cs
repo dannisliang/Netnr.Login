@@ -21,7 +21,7 @@
                 "&client_id=",
                 entity.client_id,
                 "&redirect_uri=",
-                LoginBase.EncodeUri(entity.redirect_uri),
+                entity.redirect_uri.ToEncode(),
                 "&state=",
                 entity.state,
                 "&view=",
@@ -40,11 +40,11 @@
                 return null;
             }
 
-            string pars = LoginBase.EntityToPars(entity);           
-            string result = LoginBase.HttpTo.Url(TaobaoConfig.API_AccessToken, pars);            
+            string pars = LoginBase.EntityToPars(entity);
+            string result = Core.HttpTo.Post(TaobaoConfig.API_AccessToken, pars);
             var outmo = LoginBase.ResultOutput<Taobao_AccessToken_ResultEntity>(result);
 
             return outmo;
-        }        
+        }
     }
 }

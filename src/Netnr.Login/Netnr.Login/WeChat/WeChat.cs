@@ -25,7 +25,7 @@
                 "&state=",
                 entity.state,
                 "&redirect_uri=",
-                LoginBase.EncodeUri(entity.redirect_uri)});
+                entity.redirect_uri.ToEncode()});
         }
 
         /// <summary>
@@ -41,7 +41,7 @@
             }
 
             string pars = LoginBase.EntityToPars(entity);
-            string result = LoginBase.HttpTo.Url(WeChatConfig.API_AccessToken + "?" + pars);
+            string result = Core.HttpTo.Get(WeChatConfig.API_AccessToken + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<WeChat_AccessToken_ResultEntity>(result);
 
@@ -61,7 +61,7 @@
             }
 
             string pars = LoginBase.EntityToPars(entity);
-            string result = LoginBase.HttpTo.Url(WeChatConfig.API_UserInfo + "?" + pars);
+            string result = Core.HttpTo.Get(WeChatConfig.API_UserInfo + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<WeChat_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
 

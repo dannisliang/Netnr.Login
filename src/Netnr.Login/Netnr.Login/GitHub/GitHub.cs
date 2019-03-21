@@ -24,11 +24,11 @@ namespace Netnr.Login
                 "?client_id=",
                 entity.client_id,
                 "&scope=",
-                LoginBase.EncodeUri(entity.scope),
+                entity.scope.ToEncode(),
                 "&state=",
                 entity.state,
                 "&redirect_uri=",
-                LoginBase.EncodeUri(entity.redirect_uri)});
+                entity.redirect_uri.ToEncode()});
         }
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace Netnr.Login
 
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = LoginBase.HttpTo.HWRequest(GitHubConfig.API_AccessToken, "POST", pars);
+            var hwr = Core.HttpTo.HWRequest(GitHubConfig.API_AccessToken, "POST", pars);
             hwr.Accept = "application/json";//application/xml
-            string result = LoginBase.HttpTo.Url(hwr);
+            string result = Core.HttpTo.Url(hwr);
 
             var outmo = LoginBase.ResultOutput<GitHub_AccessToken_ResultEntity>(result);
 
@@ -65,16 +65,16 @@ namespace Netnr.Login
             {
                 return null;
             }
-            
+
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = LoginBase.HttpTo.HWRequest(GitHubConfig.API_User + "?" + pars);
+            var hwr = Core.HttpTo.HWRequest(GitHubConfig.API_User + "?" + pars);
             hwr.UserAgent = entity.ApplicationName;
-            string result = LoginBase.HttpTo.Url(hwr);
+            string result = Core.HttpTo.Url(hwr);
 
             var outmo = LoginBase.ResultOutput<GitHub_User_ResultEntity>(result, new List<string> { "plan" });
 
-            return outmo;            
+            return outmo;
         }
     }
 }
